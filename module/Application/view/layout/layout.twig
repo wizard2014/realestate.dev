@@ -1,0 +1,63 @@
+{{ docType() }}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title %}{% endblock %} &bull; {{ translate('Realestate') }}
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% block meta %}{% endblock %}
+
+    <!-- Le styles -->
+    <link href="{{ basePath() }}/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="{{ basePath() }}/css/app.css">
+    {% block style %}{% endblock %}
+
+    <!-- Scripts -->
+    <!--[if lt IE 9]><script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+<div class="container-fluid">
+    <!-- main nav -->
+    <div class="navbar navbar-primary">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand text-hide logo" href="{{ url('home') }}">Home</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                {# menu here #}
+            </div>
+        </div>
+    </div><!-- /main nav -->
+
+    <section class="main">
+        {% block content %}{{ content|raw }}{% endblock %}
+    </section>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                   {# footer #}
+                </div>
+            </div>
+
+            <hr>
+            <p class="text-center">&copy; {{ 'now'|date('Y') }} by <a href="http://versover.com" target="_blank">Versover</a> {{ translate('All rights reserved.') }}</p>
+        </div>
+    </footer>
+</div> <!-- /container -->
+<script src="{{ basePath() }}/js/app.js"></script>
+{% block script %}{% endblock %}
+</body>
+</html>
